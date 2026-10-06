@@ -44,11 +44,12 @@ app.get("/api/info", (req, res) => {
 });
 
 app.get("/api/time", (req, res) => {
+  const now = new Date();
   res.json({
-    framework: "Express",
-    runtime: "Cloudflare Workers",
-	nilai: "alhamdulilah 100",
-    course: "Paas"
+    timestamp: now.getTime(),
+    iso: now.toISOString(),
+    utc: now.toUTCString(),
+    timezone: "UTC"
   });
 });
 
